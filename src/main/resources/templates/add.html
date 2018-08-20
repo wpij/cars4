@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Dodawanie zadania</title>
+
+
+    <style>
+  #formularz {background-color: grey;
+   width: 400px;
+   height: 400px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   margin-left: -200px; /* połowa szerokości */
+   margin-top: -200px;  /* połowa wysokości */
+  }
+  h1 {color: red;}
+  p {color: blue;}
+</style>
+
+</head>
+<body>
+
+<!--
+    a to link na stronie internetowej
+    href = do jakiego linku się odnosi
+-->
+<a href="/tasks">Wszystkie samochody </a>
+<a href="/demaged">Uszkodzone samochody </a>
+<a href="/unfinished">Nie uszkodzone samochody </a>
+
+
+
+<center><h1>Dodaj samochod do bazy </h1></center>
+<!--
+    h1 oznaczenie nagłówka w html
+    h2 nagłówek mniej ważny
+    h3 nagłówek jeszcze mniej ważny
+-->
+
+
+<!--
+    formularz to odpowiedni Scannera w Javie
+    służy do odczytu danych użytkownika
+
+    <input type="text" carBrand="carModel"
+    carBrand - nazwa zmiennej
+    to odpowiednik stworzenia zmiennej w Javie:
+    String carModel;
+    W protkole HTTP
+    na zmienną mówimy parametr
+
+    action = "/tasks" method="post"
+    mówi nam co ma się stać jak klikniemy przycisk submit
+    po stronie Kontrolera musimy mieć adnotacją:
+    @PostMapping("/tasks")
+
+-->
+
+<div id="formularz">
+
+    <form action="/tasks" method="post">
+        <label>Podaj marke samochodu </label>
+        <input type="text" carBrand="carBrand">
+        <br><br>
+
+        <label>Podaj model samochodu </label>
+        <input type="text" carBrand="carModel">
+        <br><br>
+
+
+        <label>Podaj link do zdjecia samochodu </label>
+        <input type="text" carBrand="carPictureUrl">
+        <br><br>
+
+
+        <label>Podaj tytul zdjecia samochodu </label>
+        <input type="text" carBrand="carPictureTitle">
+        <br><br>
+
+
+        <label>Podaj opis  samochodu </label>
+        <textarea carBrand="carPictureUrlDescription">
+          </textarea>
+
+        <br><br>
+        <label>Czy samochod uszkodzony ? </label>
+        <input type="checkbox" carBrand="demaged">
+
+        <br><br>
+        <br><br>
+
+        <input type="submit" value="Dodaj samochod do bazy">
+    </form>
+
+</div>
+
+</body>
+</html>
+
